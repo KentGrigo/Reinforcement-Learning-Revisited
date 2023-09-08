@@ -48,14 +48,14 @@ public interface Game {
      * Adds gl to the list of GameListeners who should be alerted whenever a
      * move is made.
      *
-     * @param gl
+     * @param gl the game listener
      */
     public void addGameListener(GameListener gl);
 
     /**
      * Returns the piece at place (row, column)
      *
-     * @return
+     * @return the number representation of the piece
      */
     public int getPiece(int row, int column);
 
@@ -64,7 +64,7 @@ public interface Game {
      * given.
      *
      * @param board to create a BoardChecker for.
-     * @return
+     * @return a board checker for the given board.
      */
     public BoardChecker getBoardChecker(int[][] board);
 
@@ -96,7 +96,7 @@ public interface Game {
      * Returns the other player's number.
      *
      * @param playerNumber must be 1 or 2
-     * @return
+     * @return the number representation of the other player
      */
     public static int getOtherPlayer(int playerNumber) {
         return 3 - playerNumber;

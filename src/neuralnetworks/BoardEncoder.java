@@ -9,7 +9,7 @@ public interface BoardEncoder {
      * Encode board with respect to player, using game to find player numbers.
      *
      * @param board the board to encode.
-     * @param playerNumber
+     * @param playerNumber the number representation of a given player.
      * @return board encoded as a RealVector.
      */
     public RealVector encodeBoard(Game game, int[][] board, int playerNumber, int playerTurn);
