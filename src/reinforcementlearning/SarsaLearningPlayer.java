@@ -6,7 +6,7 @@ import searchmethods.SearchMethod;
 
 public class SarsaLearningPlayer extends NeuralNetworkPlayer {
 
-    private double learningRate, decayRate, weightDecay;
+    private final double learningRate, decayRate, weightDecay;
 
     public SarsaLearningPlayer(ValueFunction valueFunction, BoardEncoder boardEncoder, MoveSelector moveSelector, SearchMethod searchMethod, Parameters parameters, int searchDepth, boolean learning, boolean debug) {
         super(valueFunction, boardEncoder, moveSelector, searchMethod, parameters, searchDepth, learning, debug);

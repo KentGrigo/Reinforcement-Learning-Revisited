@@ -12,8 +12,8 @@ public class SarsaLambdaLearningPlayer extends NeuralNetworkPlayer {
 
     private static final double MIN_ELIGIBILITY_TRACE = 0.001;
 
-    private double decayRate, weightDecay, lambda;
-    private LinkedList<Pair<RealVector, Double>> eligibilityTraces;
+    private final double decayRate, weightDecay, lambda;
+    private final LinkedList<Pair<RealVector, Double>> eligibilityTraces;
 
     public SarsaLambdaLearningPlayer(ValueFunction valueFunction, BoardEncoder boardEncoder, MoveSelector moveSelector, SearchMethod searchMethod, Parameters parameters, int searchDepth, boolean learning, boolean debug) {
         super(valueFunction, boardEncoder, moveSelector, searchMethod, parameters, searchDepth, learning, debug);

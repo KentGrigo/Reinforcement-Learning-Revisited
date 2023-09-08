@@ -6,9 +6,9 @@ import java.util.*;
 
 public class Statistics {
 
-    private ArrayList<Integer> wins, loss, draws, amountOfGames;
+    private final ArrayList<Integer> wins, loss, draws, amountOfGames;
     private int epochs;
-    private DecimalFormat df;
+    private final DecimalFormat df;
 
     public Statistics() {
         this.wins = new ArrayList<>();

@@ -8,7 +8,7 @@ import reinforcementlearning.ValueFunction;
 
 public class MaxValuePolicy implements Policy {
 
-    private ValueFunction vf;
+    private final ValueFunction vf;
 
     public MaxValuePolicy(ValueFunction vf) {
         this.vf = vf;

@@ -8,7 +8,7 @@ import reinforcementlearning.Move;
 public class Node {
 
     protected Node parent;
-    private Move move;
+    private final Move move;
     public double Q;
     public int N;
     protected int movingPlayerNumber;

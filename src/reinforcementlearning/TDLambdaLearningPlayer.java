@@ -8,10 +8,10 @@ import searchmethods.SearchMethod;
 
 public class TDLambdaLearningPlayer extends NeuralNetworkPlayer {
 
-    private int[] layerSizes;
-    private double decayRate, lambda;
-    private RealVector[] biasEligibilityTraces;
-    private RealMatrix[] weightEligibilityTraces;
+    private final int[] layerSizes;
+    private final double decayRate, lambda;
+    private final RealVector[] biasEligibilityTraces;
+    private final RealMatrix[] weightEligibilityTraces;
 
     public TDLambdaLearningPlayer(ValueFunction valueFunction, BoardEncoder boardEncoder, MoveSelector moveSelector, SearchMethod searchMethod, Parameters parameters, int searchDepth, boolean learning, boolean debug) {
         super(valueFunction, boardEncoder, moveSelector, searchMethod, parameters, searchDepth, learning, debug);

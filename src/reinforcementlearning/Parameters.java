@@ -10,12 +10,12 @@ public class Parameters implements Comparable<Parameters> {
     private int[] layerSizes;
     private double moveSelectorRate;
     private double moveSelectorRateDecayFactor;
-    private double learningRate;
+    private final double learningRate;
     private double learningRateDecayFactor;
-    private double decayRate;
-    private double eta;
-    private double weightDecay;
-    private double lambda;
+    private final double decayRate;
+    private final double eta;
+    private final double weightDecay;
+    private final double lambda;
     private PlayerSettings playerSettings;
     private Statistics benchmarkStatistics;
     private String networkPath;

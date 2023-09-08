@@ -13,7 +13,7 @@ public class ConnectFourGame implements Game {
     private final int rows, columns;
     private int placed;
     private final int[][] board;
-    private Player[] players;
+    private final Player[] players;
     private final ConnectFourBoardChecker boardChecker;
     private int activePlayer;
     private boolean winnerFound;

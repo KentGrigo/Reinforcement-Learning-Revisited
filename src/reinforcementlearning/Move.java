@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 public class Move {
 
-    private int row;
-    private int column;
+    private final int row;
+    private final int column;
     private double value;
 
     public Move(int row, int column, double value) {
