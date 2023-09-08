@@ -1,4 +1,4 @@
-# Reinforcement Learning
+# Reinforcement Learning, Revisited
 
 ## What is this?
 This is the joint Master's thesis by Thor Bagge and Kent Grigo.
@@ -21,3 +21,11 @@ combined with the noise-injection methods:
 and the following search algorithms:
 - Minimax
 - Monte-Carlo Tree Search (MCTS)
+
+## Revisited, why?
+This project meant a lot to me, so I wanted to take a look at it again.
+I thought it could be fun to apply the industry standards that I've learnt since I originally worked on it.
+
+I chose to make a new repository because I wanted the original work to stand on its own.
+My ideal approach would have been to fork the repository; but since I can't fork my own repositories, I had to make a new one.
+[Here's the original repository](https://github.com/KentGrigo/Reinforcement-Learning).
