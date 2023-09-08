@@ -16,7 +16,6 @@ public class Setup {
 
     private static GamePanel gp;
     private static PlotPanel pp;
-    private static SettingsPanel sp;
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd - HH.mm.ss");
 
     public static void main(String[] args) {
@@ -199,7 +198,7 @@ public class Setup {
     }
 
     private static void setupSettings() {
-        sp = new SettingsPanel();
+        SettingsPanel sp = new SettingsPanel();
         JFrame mainFrame = new JFrame("Settings");
         mainFrame.add(sp);
         mainFrame.pack();

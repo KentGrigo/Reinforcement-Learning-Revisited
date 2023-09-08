@@ -6,11 +6,9 @@ import reinforcementlearning.Move;
 
 public class HumanPlayer extends BasePlayer implements MoveListener {
 
-    private final GamePanel gamePanel;
     private Move potentialMove;
 
     public HumanPlayer(GamePanel gp) {
-        this.gamePanel = gp;
         this.potentialMove = null;
         gp.addMoveListener(this);
     }
