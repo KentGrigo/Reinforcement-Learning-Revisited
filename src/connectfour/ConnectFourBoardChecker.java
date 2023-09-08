@@ -37,9 +37,9 @@ public class ConnectFourBoardChecker extends BoardChecker {
     public boolean checkWinner(int player, int row, int column) {
         boolean hasWon = false;
 
-        //North east diagonal
+        //North-east diagonal
         hasWon |= checkWinnerHelper(player, row, column, 1, 1);
-        //South east diagonal
+        //South-east diagonal
         hasWon |= checkWinnerHelper(player, row, column, -1, 1);
         //East
         hasWon |= checkWinnerHelper(player, row, column, 0, 1);
@@ -81,9 +81,9 @@ public class ConnectFourBoardChecker extends BoardChecker {
 
     @Override
     public void markWinner(int player, int row, int column) {
-        //North east diagonal
+        //North-east diagonal
         markWinnerHelper(player, row, column, 1, 1);
-        //South east diagonal
+        //South-east diagonal
         markWinnerHelper(player, row, column, -1, 1);
         //East
         markWinnerHelper(player, row, column, 0, 1);
