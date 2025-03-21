@@ -59,11 +59,11 @@ public class MinimaxSearchMethod implements SearchMethod {
         if (maximizingPlayer) {
             nextTurn = -1;
             encodingPlayer = currentPlayer;
-            queueComparator = Move.getDecreasingComparator();
+            queueComparator = Move.Companion.getDecreasingComparator();
         } else {
             nextTurn = 1;
             encodingPlayer = previousPlayer;
-            queueComparator = Move.getIncreasingComparator();
+            queueComparator = Move.Companion.getIncreasingComparator();
         }
         PriorityQueue<Move> pq = new PriorityQueue<>(possibleMoves.size(), queueComparator);
 
@@ -99,7 +99,7 @@ public class MinimaxSearchMethod implements SearchMethod {
                     moves.add(tmpMove);
                 }
                 tmpMove.setValue(nextMove.getValue());
-                bestMove = Move.max(bestMove, tmpMove);
+                bestMove = Move.Companion.max(bestMove, tmpMove);
                 alpha = Math.max(alpha, bestMove.getValue());
                 if (beta <= alpha) {
                     break;
@@ -117,7 +117,7 @@ public class MinimaxSearchMethod implements SearchMethod {
                     moves.add(tmpMove);
                 }
                 tmpMove.setValue(nextMove.getValue());
-                bestMove = Move.min(bestMove, tmpMove);
+                bestMove = Move.Companion.min(bestMove, tmpMove);
                 beta = Math.min(beta, bestMove.getValue());
                 if (beta <= alpha) {
                     break;

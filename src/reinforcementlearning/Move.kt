@@ -1,83 +1,46 @@
-package reinforcementlearning;
+package reinforcementlearning
 
-import java.util.Comparator;
+data class Move(
+    val row: Int,
+    val column: Int,
+    var value: Double,
+) {
+    constructor(row: Int, column: Int) :
+            this(row, column, Double.NEGATIVE_INFINITY)
 
-public class Move {
-
-    private final int row;
-    private final int column;
-    private double value;
-
-    public Move(int row, int column, double value) {
-        this.row = row;
-        this.column = column;
-        this.value = value;
+    override fun toString(): String {
+        return "Move{row=${row + 1}, column=${column + 1}, value=${value}}"
     }
 
-    public Move(int row, int column) {
-        this(row, column, Double.NEGATIVE_INFINITY);
-    }
-
-    public static Comparator<Move> getIncreasingComparator() {
-        return (Move o1, Move o2) -> {
-            if (o1.value < o2.value) {
-                return -1;
-            } else if (o1.value > o2.value) {
-                return 1;
-            } else {
-                return 0;
+    companion object {
+        fun getIncreasingComparator(): Comparator<Move> {
+            return Comparator { o1: Move, o2: Move ->
+                return@Comparator o1.value.compareTo(o2.value)
             }
-        };
-    }
+        }
 
-    public static Comparator<Move> getDecreasingComparator() {
-        return (Move o1, Move o2) -> {
-            if (o1.value > o2.value) {
-                return -1;
-            } else if (o1.value < o2.value) {
-                return 1;
-            } else {
-                return 0;
+        fun getDecreasingComparator(): Comparator<Move> {
+            return Comparator { o1: Move, o2: Move ->
+                return@Comparator -o1.value.compareTo(o2.value)
             }
-        };
-    }
-
-    public static Move max(Move m1, Move m2) {
-        if (m1 == null) return m2;
-        if (m2 == null) return m1;
-        if (m1.getValue() > m2.getValue()) {
-            return m1;
         }
-        return m2;
-    }
 
-    public static Move min(Move m1, Move m2) {
-        if (m1 == null) return m2;
-        if (m2 == null) return m1;
-        if (m1.getValue() < m2.getValue()) {
-            return m1;
+        fun max(m1: Move?, m2: Move?): Move? {
+            if (m1 == null) return m2
+            if (m2 == null) return m1
+            if (m1.value > m2.value) {
+                return m1
+            }
+            return m2
         }
-        return m2;
-    }
 
-    public int getRow() {
-        return row;
-    }
-
-    @Override
-    public String toString() {
-        return "Move{" + "row=" + (row + 1) + ", column=" + (column + 1) + ", value=" + value + '}';
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
+        fun min(m1: Move?, m2: Move?): Move? {
+            if (m1 == null) return m2
+            if (m2 == null) return m1
+            if (m1.value < m2.value) {
+                return m1
+            }
+            return m2
+        }
     }
 }

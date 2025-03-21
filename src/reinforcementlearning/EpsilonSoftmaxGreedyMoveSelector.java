@@ -19,7 +19,7 @@ public class EpsilonSoftmaxGreedyMoveSelector extends MoveSelector {
             return softmaxSelector.selectMove(moves);
         }
 
-        Move selectedMove = Collections.max(moves, Move.getIncreasingComparator());
+        Move selectedMove = Collections.max(moves, Move.Companion.getIncreasingComparator());
         return selectedMove;
     }
 

@@ -16,7 +16,7 @@ public class EpsilonGreedyMoveSelector extends MoveSelector {
             return moves.get(RNG.nextInt(moves.size()));
         }
 
-        Move selectedMove = Collections.max(moves, Move.getIncreasingComparator());
+        Move selectedMove = Collections.max(moves, Move.Companion.getIncreasingComparator());
         return selectedMove;
     }
 }
