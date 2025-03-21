@@ -7,6 +7,7 @@ import org.apache.commons.math3.linear.*;
 import reinforcementlearning.ValueFunction;
 
 public class Network implements ValueFunction, Serializable {
+    private static final long serialVersionUID = -1467047534871544117L;
 
     public final Neuron[][] neurons;
     private final ActivationFunction activationFunction;

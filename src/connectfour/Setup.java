@@ -127,7 +127,7 @@ public class Setup {
 
         Network p1Network = NETWORK_HANDLER.loadNetwork(p1NetworkPath, p1LayerSizes);
         Network p2Network = NETWORK_HANDLER.loadNetwork(p2NetworkPath, p2LayerSizes);
-        Network benchmarkNetwork = (Network) ObjectLoader.loadObject(BENCHMARK_NETWORK_PATH);
+        Network benchmarkNetwork = NETWORK_HANDLER.loadNetwork(BENCHMARK_NETWORK_PATH, BENCHMARK_LAYER_SIZES);
 
         if (LEARNER_PLAYER == PlayerType.HUMAN || OPPONENT_PLAYER == PlayerType.HUMAN || BENCHMARK_PLAYER == PlayerType.HUMAN) setupGamePanel(game);
         Player p1 = PlayerType.getPlayer(p1Parameters.getPlayerSettings(), p1Network, p1Parameters, LEARNER_IS_LEARNING, DEBUG, gp);
