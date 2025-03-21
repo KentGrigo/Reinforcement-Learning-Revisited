@@ -2,7 +2,7 @@ package neuralnetworks;
 
 import java.io.Serializable;
 import java.util.*;
-import javafx.util.Pair;
+import auxiliaries.Pair;
 import org.apache.commons.math3.linear.*;
 import reinforcementlearning.ValueFunction;
 
@@ -120,10 +120,10 @@ public class Network implements ValueFunction, Serializable {
             weights[i] = MatrixUtils.createRealMatrix(neurons[i].length, neurons[i - 1].length);
         }
         for (Pair<RealVector, RealVector> example : examples) {
-            Pair<RealVector[], RealVector[]> temp = feedForward(example.getKey());
-            RealVector[] weightedInputs = temp.getKey();
-            RealVector[] activations = temp.getValue();
-            RealVector[] deltas = backpropagate(weightedInputs, activations, example.getValue());
+            Pair<RealVector[], RealVector[]> temp = feedForward(example.getFirst());
+            RealVector[] weightedInputs = temp.getFirst();
+            RealVector[] activations = temp.getSecond();
+            RealVector[] deltas = backpropagate(weightedInputs, activations, example.getSecond());
             for (int i = 1; i < amountOfLayers; i++) {
                 bias[i] = bias[i].add(deltas[i]);
                 weights[i] = weights[i].add(deltas[i].outerProduct(activations[i - 1]));
@@ -161,8 +161,8 @@ public class Network implements ValueFunction, Serializable {
             weightGradients[i] = MatrixUtils.createRealMatrix(neurons[i].length, neurons[i - 1].length);
         }
         Pair<RealVector[], RealVector[]> temp = feedForward(input);
-        RealVector[] weightedInputs = temp.getKey();
-        RealVector[] activations = temp.getValue();
+        RealVector[] weightedInputs = temp.getFirst();
+        RealVector[] activations = temp.getSecond();
         RealVector[] deltas = backpropagateNoCost(weightedInputs, activations);
         for (int i = 1; i < amountOfLayers; i++) {
             biasGradient[i] = biasGradient[i].add(deltas[i]);
@@ -215,8 +215,8 @@ public class Network implements ValueFunction, Serializable {
         int correctAnswers = 0;
         RealVector output;
         for (Pair<RealVector, RealVector> example : examples) {
-            output = feedForward(example.getKey()).getValue()[neurons.length - 1];
-            if (example.getValue().getMaxIndex() == output.getMaxIndex()) {
+            output = feedForward(example.getFirst()).getSecond()[neurons.length - 1];
+            if (example.getSecond().getMaxIndex() == output.getMaxIndex()) {
                 correctAnswers++;
             }
         }
@@ -226,7 +226,7 @@ public class Network implements ValueFunction, Serializable {
     @Override
     public double evaluate(RealVector state) {
         Pair<RealVector[], RealVector[]> output = feedForward(state);
-        return output.getValue()[neurons.length - 1].getEntry(0);
+        return output.getSecond()[neurons.length - 1].getEntry(0);
     }
 
     @Override

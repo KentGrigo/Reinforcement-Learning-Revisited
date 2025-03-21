@@ -2,7 +2,7 @@ package neuralnetworks;
 
 import java.util.ArrayList;
 import java.util.List;
-import javafx.util.Pair;
+import auxiliaries.Pair;
 import org.apache.commons.math3.linear.RealVector;
 
 public class Driver {
